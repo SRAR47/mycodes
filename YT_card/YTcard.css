@@ -1,0 +1,38 @@
+.card{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.74);
+    height: auto;
+    color: white;
+    border-radius: 5px;
+}
+.about{
+    display: flex;
+}
+.about_text{
+    margin-left: 10px;
+}
+.title{
+    margin-left: 10px;
+}
+.image>img{
+    border-radius: 5px;
+    position: relative;
+}
+.image>div{
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.685);
+    border-radius: 5px;
+    padding: 2px;
+    color: white;
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
+.image{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.text{
+    margin-top: 10px;
+}

@@ -1,0 +1,444 @@
+* {
+
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    background-color: black;
+    /* height: 300vh; */
+}
+
+header {
+    background-image: url(Images/Netflix\ main\ bg.jpg);
+    background-position: center center;
+    background-size: max(100vw, 1800px);
+    background-repeat: no-repeat;
+    width: 100vw;
+    /* position: absolute; */
+    height: 100vh;
+}
+
+.opacity {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 50%;
+    position: absolute;
+}
+
+header nav {
+    display: flex;
+    width: 70vw;
+    height: 15vh;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+
+}
+
+header nav img {
+    z-index: 10;
+    width: 150px;
+}
+
+header nav button {
+    z-index: 10;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 800;
+}
+
+.main {
+    display: flex;
+    /* background-color: black; */
+    flex-direction: column;
+    height: auto;
+    margin-top: 200px;
+    /* border: 1px solid re9 */
+    justify-content: center;
+    align-items: center;
+}
+
+.heading {
+    font-size: 3rem;
+    z-index: 10;
+    font-weight: 900;
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+    z-index: 10;
+    font-size: 1.5rem;
+}
+
+#text-1 {
+    margin-bottom: 20px;
+}
+
+#text-2 {
+    margin-bottom: 10px;
+}
+
+.input {
+    z-index: 10;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* border: 5px solid red; */
+}
+
+.input input {
+    width: 29vw;
+    margin-right: 1vw;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.527);
+    font-weight: 600;
+    padding-left: 30px;
+    border: 1px solid gray;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.input button {
+    width: 15vw;
+    background-color: red;
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.seperation {
+    height: 7px;
+    width: 100vw;
+    background-color: rgba(59, 59, 59, 0.658);
+}
+
+.tv {
+    height: 80vh;
+    width: 80vw;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+}
+
+.tv div {
+    /* border: 2px solid red; */
+    justify-content: center;
+    /* align-items: start; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tv div span {
+    text-align: start;
+}
+
+#tv-heading {
+    margin-bottom: 10px;
+}
+
+.nothing {
+    height: 80vh;
+    width: 80vw;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+}
+
+.nothing div {
+    /* border: 2px solid red; */
+    justify-content: center;
+    /* align-items: start; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nothing div span {
+    text-align: start;
+}
+
+#nothing-heading {
+    margin-bottom: 10px;
+}
+
+.mobile {
+    height: 80vh;
+    width: 80vw;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.mobile div {
+    /* border: 2px solid red; */
+    justify-content: center;
+    /* align-items: start; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile div span {
+    text-align: start;
+}
+
+#mobile-heading {
+    margin-bottom: 10px;
+}
+
+.kids {
+    height: 80vh;
+    width: 80vw;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.kids div {
+    /* border: 2px solid red; */
+    justify-content: center;
+    /* align-items: start; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.kids div span {
+    text-align: start;
+}
+
+#kids-heading {
+    margin-bottom: 10px;
+}
+
+.faq {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    width: auto;
+    /* border: 1px solid red; */
+    grid-gap: 5px;
+}
+
+.questions {
+    background-color: rgb(44, 44, 44);
+    width: 70vw;
+    height: 13vh;
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+}
+
+.plus {
+    padding-right: 30px;
+    font-size: 3.5rem;
+    font-weight: 10;
+}
+
+#faq-heading {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#faq-text {
+    margin-top: 50px;
+    width: 95vw;
+}
+
+#faq-input {
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+footer {
+    height: minmax(50vh ,auto);
+    width: 80vw;
+    margin: auto;
+    /* border: 1px solid green; */
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+footer a {
+    color: rgb(139, 139, 139);
+}
+
+.lists {
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 20px;
+}
+
+footer details {
+    border: 1px solid gray;
+    width: 100px;
+    margin-top: 20px;
+
+}
+
+.lists ul li {
+    list-style: none;
+}
+
+.lang-btn {
+    border: 1px solid gray;
+    width: 100px;
+    margin: 20px 0px;
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.netflix-pak {
+    color: rgb(139, 139, 139);
+}
+
+@media (max-width:1020px) {
+    .input button {
+        font-size: 1.1rem;
+        width: 20vw;
+    }
+}
+
+@media (max-width:740px){
+    .lists{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-lists{
+        margin-top: 50px;
+        text-align: center;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width:610px) {
+    .input {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 80vw;
+    }
+
+    .input button {
+        align-self: center;
+        width: 80vw;
+        width: auto;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .input input {
+        align-self: center;
+        margin-bottom: 10px;
+        width: 80vw;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .tv {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tv div span {
+        text-align: center;
+    }
+
+    .nothing {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .nothing div span {
+        text-align: center;
+    }
+
+    .mobile {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .mobile div span {
+        text-align: center;
+    }
+
+    .kids {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .kids div span {
+        text-align: center;
+    }
+
+    .questions {
+        height: 10vh;
+    }
+
+    .plus {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:400px) {
+    header {
+        height: 90vh;
+    }
+
+    .opacity {
+        height: 90vh;
+    }
+
+    header nav {
+        flex-direction: column;
+        padding-top: 15px;
+    }
+
+    .main {
+        margin-top: 100px;
+    }
+
+    .questions {
+        padding-left: 10px;
+    }
+
+    .plus {
+        padding-right: 10px;
+    }
+}
