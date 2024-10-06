@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 10;
 }
@@ -29,9 +29,17 @@ nav {
 
 #nav1 {
     display: flex;
-    width: 15vw;
+    width: 50vw;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+.songsec{
+    margin-left: 20px;
+}
+.songsec:hover{
+    color: wheat;
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 #nav1>i{
@@ -40,21 +48,14 @@ nav {
 }
 
 #pglist {
+    margin-left: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 120px;
+    justify-content: flex-start;
+    width: 50vw;
     list-style-type: none;
 }
 
-.link {
-    text-decoration: none;
-    overflow: auto;
-}
-
-.link:hover {
-    color: wheat;
-}
 
 #searchbar {
     padding: 0 10px;
@@ -107,6 +108,7 @@ nav {
 .song:hover{
     transform: scale(1.1);
     transition-duration: 0.2s;
+    cursor: pointer;
 }
 
 .song>i {
@@ -165,4 +167,8 @@ footer {
     position: absolute;
     left: 30px;
     top: 40px;
+}
+
+.underlined{
+    text-decoration: underline;
 }
