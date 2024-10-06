@@ -172,3 +172,9 @@ footer {
 .underlined{
     text-decoration: underline;
 }
+
+.opaque{
+    background-color: rgba(0, 0, 0, 0.90);
+    justify-content: center;
+}
+

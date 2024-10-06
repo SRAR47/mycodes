@@ -5,8 +5,8 @@ const songslist = [
     { SongName: '12 Bande.mp3' },
     { SongName: 'Aam Jahe Munde.mp3' },
     { SongName: 'Amplifier.mp3' },
-    { SongName: 'Angriji Beat.mp3' },
-    { SongName: 'Baadshsh O Baadshah.mp3' },
+    { SongName: 'Angreji Beat.mp3' },
+    { SongName: 'Baadshah O Baadshah.mp3' },
     { SongName: 'BROWN MUNDE.mp3' },
     { SongName: 'DAKU.mp3' },
     { SongName: 'DEVIL.mp3' },
@@ -17,8 +17,8 @@ const songslist = [
     { SongName: 'GAME.mp3' },
     { SongName: 'GOAT.mp3' },
     { SongName: 'GOLIYAN.mp3' },
-    { SongName: 'Hairun Kahirun.mp3' },
-    { SongName: 'Aaye Ho Meri Zindagi Mein Tum Bahar Banke.mp3' },
+    { SongName: 'Hairun Khairun.mp3' },
+    { SongName: 'Aaye Ho Meri Zindagi Mein Tum Bahar Banke .mp3' },
     { SongName: 'Baatein Ye Kabhi Na.mp3' },
     { SongName: 'Chahu main ya na.mp3' },
     { SongName: 'Chal Waha Jate Hai.mp3' },
@@ -27,7 +27,7 @@ const songslist = [
     { SongName: 'Hamari Adhuri Kahani.mp3' },
     { SongName: 'Humnava Mere.mp3' },
     { SongName: 'Jeene Laga Hoon.mp3' },
-    { SongName: 'Jo Behji Thi Duaa.mp3' },
+    { SongName: 'Jo Bheji Thi Duaa.mp3' },
     { SongName: 'Khamoshiyan.mp3' },
     { SongName: 'LAKK 28 KUDI DA.mp3' },
     { SongName: 'Lalkaara.mp3' },
@@ -35,7 +35,7 @@ const songslist = [
     { SongName: 'MAIN DHOONDNE KO ZAMAANE MEIN.mp3' },
     { SongName: 'Main Yahaan Hoon.mp3' },
     { SongName: 'Mera samne wali khidki.mp3' },
-    { SongName: 'Meray Paas Tum Ho.mp3' },
+    { SongName: 'Mere Paas Tum Ho.mp3' },
     { SongName: 'MIRASI.mp3' },
     { SongName: 'Mitti De Tibbe.mp3' },
     { SongName: 'Nain Tere.mp3' },
@@ -66,7 +66,7 @@ const songslist = [
 const sadsongs = [
     { SongName: 'Pani Deyan Bulbuleya.mp3' },
     { SongName: 'Tune Jo Na Kaha.mp3' },
-    { SongName: 'Aaye Ho Meri Zindagi Mein Tum Bahar Banke.mp3' },
+    { SongName: 'Aaye Ho Meri Zindagi Mein Tum Bahar Banke .mp3' },
     { SongName: 'Chahu main ya na.mp3' },
     { SongName: 'Baatein Ye Kabhi Na.mp3' },
     { SongName: 'Chal Waha Jate Hai.mp3' },
@@ -75,12 +75,12 @@ const sadsongs = [
     { SongName: 'Hamari Adhuri Kahani.mp3' },
     { SongName: 'Humnava Mere.mp3' },
     { SongName: 'Jeene Laga Hoon.mp3' },
-    { SongName: 'Jo Behji Thi Duaa.mp3' },
+    { SongName: 'Jo Bheji Thi Duaa.mp3' },
     { SongName: 'Khamoshiyan.mp3' },
     { SongName: 'MAIN DHOONDNE KO ZAMAANE MEIN.mp3' },
     { SongName: 'Main Yahaan Hoon.mp3' },
     { SongName: 'Mera samne wali khidki.mp3' },
-    { SongName: 'Meray Paas Tum Ho.mp3' },
+    { SongName: 'Mere Paas Tum Ho.mp3' },
     { SongName: 'Suraj Hua Maddham.mp3' },
     { SongName: 'Teri meri meri teri.mp3' },
     { SongName: 'Tu ha kahan.mp3' },
@@ -105,9 +105,9 @@ const beatsongs = [
     { SongName: 'Yaar Anmulle.mp3' },
     { SongName: 'Ankhen khuli.mp3' },
     { SongName: 'Mere Mehboob Mere Sanam.mp3' },
-    { SongName: 'Angriji Beat.mp3' },
+    { SongName: 'Angreji Beat.mp3' },
     { SongName: 'Tu ha kahan.mp3' },
-    { SongName: 'Baadshsh O Baadshah.mp3' },
+    { SongName: 'Baadshah O Baadshah.mp3' },
     { SongName: 'BROWN MUNDE.mp3' },
     { SongName: 'DAKU.mp3' },
     { SongName: 'DEVIL.mp3' },
@@ -118,7 +118,7 @@ const beatsongs = [
     { SongName: 'GAME.mp3' },
     { SongName: 'GOAT.mp3' },
     { SongName: 'GOLIYAN.mp3' },
-    { SongName: 'Hairun Kahirun.mp3' },
+    { SongName: 'Hairun Khairun.mp3' },
     { SongName: 'LAKK 28 KUDI DA.mp3' },
     { SongName: 'Lalkaara.mp3' },
     { SongName: 'Lungi Dance.mp3' },
@@ -146,6 +146,7 @@ let allsongsbtn = document.getElementById('allsongs');
 let sadsongsbtn = document.getElementById('sadsongs');
 let currentlist
 let beatsongsbtn = document.getElementById('beatsongs');
+let songDiv
 
 
 // Functions
@@ -165,12 +166,14 @@ function loadsongs(SongsList) {
     songdiv.forEach((songDiv, index) => {
         songDiv.addEventListener('click', () => {
             song.pause()
+            songdiv.forEach(div => div.classList.remove('opaque'));
             currentIndex = index
             song = new Audio(SongsList[index].SongName)
             progress.value = 0
             masterplay.classList.remove('fa-play')
             masterplay.classList.add('fa-pause')
             song.play()
+            songDiv.classList.add('opaque')
             // Update the name of the song in footer as the song changes
             songinfo.textContent = SongsList[currentIndex].SongName.replace('.mp3', '');
             // update seekbar as song plays
@@ -230,12 +233,14 @@ masterplay.addEventListener('click', () => {
 // next button logic
 next.addEventListener('click', () => {
     song.pause();
+    songdiv.forEach(div => div.classList.remove('opaque'));
     currentIndex = (currentIndex + 1) % currentlist.length;  // Move to next song and loop back to start
     song = new Audio(currentlist[currentIndex].SongName);
     progress.value = 0;
     masterplay.classList.remove('fa-play');
     masterplay.classList.add('fa-pause');
     song.play();
+    songdiv[currentIndex].classList.add('opaque')
     // Update the name of the song in footer as the song changes
     songinfo.textContent = currentlist[currentIndex].SongName.replace('.mp3', '');
     // Update seek bar as song plays
@@ -247,7 +252,8 @@ next.addEventListener('click', () => {
 
 //previous button logic
 previous.addEventListener('click', () => {
-    song.pause()
+    song.pause();
+    songdiv.forEach(div => div.classList.remove('opaque'));
     progress.value = 0
     if (currentIndex === 0) {
         currentIndex = currentlist.length - 1
@@ -260,6 +266,7 @@ previous.addEventListener('click', () => {
     masterplay.classList.remove('fa-play');
     masterplay.classList.add('fa-pause');
     song.play();
+    songdiv[currentIndex].classList.add('opaque')
     // Update the name of the song in footer as the song changes
     songinfo.textContent = currentlist[currentIndex].SongName.replace('.mp3', '');
     // Update seek bar as song plays
