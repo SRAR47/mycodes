@@ -1,7 +1,7 @@
 // List of songs
 const songslist = [
-    { SongName: 'LABON KO.mp3' },
     { SongName: '9 45.mp3' },
+    { SongName: 'LABON KO.mp3' },
     { SongName: '12 Bande.mp3' },
     { SongName: 'Aam Jahe Munde.mp3' },
     { SongName: 'Amplifier.mp3' },
@@ -147,9 +147,12 @@ let sadsongsbtn = document.getElementById('sadsongs');
 let currentlist
 let beatsongsbtn = document.getElementById('beatsongs');
 let songDiv
+let ct = document.getElementById('current-time');
+let tt = document.getElementById('total-time');
 
 
 // Functions
+// Function to add songs to container and make them playable
 function loadsongs(SongsList) {
     SongsList.sort((a, b) => a.SongName.localeCompare(b.SongName));
 
@@ -166,7 +169,9 @@ function loadsongs(SongsList) {
     songdiv.forEach((songDiv, index) => {
         songDiv.addEventListener('click', () => {
             song.pause()
-            songdiv.forEach(div => div.classList.remove('opaque'));
+            songdiv.forEach(div => {
+                div.classList.remove('opaque')
+            });
             currentIndex = index
             song = new Audio(SongsList[index].SongName)
             progress.value = 0
@@ -179,11 +184,45 @@ function loadsongs(SongsList) {
             // update seekbar as song plays
             song.addEventListener('timeupdate', () => {
                 let prog = parseInt((song.currentTime) / (song.duration) * 100)
+                let totalseconds = song.duration
+                let mins = Math.floor(totalseconds / 60);
+                let secs = Math.floor(totalseconds % 60);
+                if (secs < 10) {
+                    tt.innerText = `${mins}:0${secs}`
+                }
+                else {
+                    tt.innerText = `${mins}:${secs}`
+                }
+                let currentseconds = Math.floor(song.currentTime)
+                let currentmins = Math.floor(song.currentTime / 60);
+                let currentsecs = Math.floor(song.currentTime % 60);
+                if (currentsecs < 10) {
+                    if (song.currentTime < 60) {
+                        ct.innerText = `00:0${currentseconds}`
+                    }
+                    else {
+                        ct.innerText = `${currentmins}:0${currentsecs}`
+                    }
+                }
+                else {
+                    if (song.currentTime < 60) {
+                        ct.innerText = `00:${currentseconds}`
+                    }
+                    else {
+                        ct.innerText = `${currentmins}:${currentsecs}`
+                    }
+                }
+
                 progress.value = prog;
             })
+            // Function to handle when the song ends
+            song.addEventListener('ended', () => {
+                next.click(); // This triggers the next button's logic to play the next song
+            });
         })
     })
 }
+
 
 
 // Event Listeners
@@ -216,7 +255,10 @@ beatsongsbtn.addEventListener('click', () => {
 
 // playbutton events that functions for pause or play
 masterplay.addEventListener('click', () => {
-    if (song.paused || song.currentTime <= 0) {
+    if (!allsongsbtn.classList.contains('underlined') && !sadsongsbtn.classList.contains('underlined') && !beatsongsbtn.classList.contains('underlined')) {
+        return
+    }
+    else if (song.paused || song.currentTime <= 0) {
         song.play();
         masterplay.classList.remove('fa-play')
         masterplay.classList.add('fa-pause')
@@ -226,6 +268,10 @@ masterplay.addEventListener('click', () => {
         masterplay.classList.add('fa-play')
         masterplay.classList.remove('fa-pause')
     }
+    // Function to handle when the song ends
+    song.addEventListener('ended', () => {
+        next.click(); // This triggers the next button's logic to play the next song
+    });
 })
 
 
@@ -233,7 +279,9 @@ masterplay.addEventListener('click', () => {
 // next button logic
 next.addEventListener('click', () => {
     song.pause();
-    songdiv.forEach(div => div.classList.remove('opaque'));
+    songdiv.forEach(div => {
+        div.classList.remove('opaque')
+    });
     currentIndex = (currentIndex + 1) % currentlist.length;  // Move to next song and loop back to start
     song = new Audio(currentlist[currentIndex].SongName);
     progress.value = 0;
@@ -243,17 +291,44 @@ next.addEventListener('click', () => {
     songdiv[currentIndex].classList.add('opaque')
     // Update the name of the song in footer as the song changes
     songinfo.textContent = currentlist[currentIndex].SongName.replace('.mp3', '');
+    // Update total time (tt) and current time (ct)
+    song.addEventListener('loadedmetadata', () => {
+        let totalseconds = song.duration;
+        let mins = Math.floor(totalseconds / 60);
+        let secs = Math.floor(totalseconds % 60);
+        tt.innerText = secs < 10 ? `${mins}:0${secs}` : `${mins}:${secs}`;
+
+        // Set current time to 0 at the start
+        ct.innerText = `00:00`;
+    });
+
+    song.addEventListener('timeupdate', () => {
+        let prog = parseInt((song.currentTime) / song.duration * 100);
+        progress.value = prog;
+
+        // Update current time (ct)
+        let currentmins = Math.floor(song.currentTime / 60);
+        let currentsecs = Math.floor(song.currentTime % 60);
+        ct.innerText = currentsecs < 10 ? `${currentmins}:0${currentsecs}` : `${currentmins}:${currentsecs}`;
+    });
+    // Function to handle when the song ends
+    song.addEventListener('ended', () => {
+        next.click(); // This triggers the next button's logic to play the next song
+    });
     // Update seek bar as song plays
     song.addEventListener('timeupdate', () => {
         let prog = parseInt((song.currentTime) / (song.duration) * 100);
         progress.value = prog;
     });
+
 });
 
 //previous button logic
 previous.addEventListener('click', () => {
     song.pause();
-    songdiv.forEach(div => div.classList.remove('opaque'));
+    songdiv.forEach(div => {
+        div.classList.remove('opaque')
+    });
     progress.value = 0
     if (currentIndex === 0) {
         currentIndex = currentlist.length - 1
@@ -269,6 +344,31 @@ previous.addEventListener('click', () => {
     songdiv[currentIndex].classList.add('opaque')
     // Update the name of the song in footer as the song changes
     songinfo.textContent = currentlist[currentIndex].SongName.replace('.mp3', '');
+    // Update total time (tt) and current time (ct)
+    song.addEventListener('loadedmetadata', () => {
+        let totalseconds = song.duration;
+        let mins = Math.floor(totalseconds / 60);
+        let secs = Math.floor(totalseconds % 60);
+        tt.innerText = secs < 10 ? `${mins}:0${secs}` : `${mins}:${secs}`;
+
+        // Set current time to 0 at the start
+        ct.innerText = `00:00`;
+    });
+
+    song.addEventListener('timeupdate', () => {
+        let prog = parseInt((song.currentTime) / song.duration * 100);
+        progress.value = prog;
+
+        // Update current time (ct)
+        let currentmins = Math.floor(song.currentTime / 60);
+        let currentsecs = Math.floor(song.currentTime % 60);
+        ct.innerText = currentsecs < 10 ? `${currentmins}:0${currentsecs}` : `${currentmins}:${currentsecs}`;
+    });
+
+    // Function to handle when the song ends
+    song.addEventListener('ended', () => {
+        next.click(); // This triggers the next button's logic to play the next song
+    });
     // Update seek bar as song plays
     song.addEventListener('timeupdate', () => {
         let prog = parseInt((song.currentTime) / (song.duration) * 100);

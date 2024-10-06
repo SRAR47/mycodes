@@ -4,11 +4,15 @@
     box-sizing: border-box;
     font-size: 18px;
     color: white;
+    font-family: "Ubuntu", sans-serif;
 }
 
 body {
     background-color: rgb(40, 40, 40);
     height: 100vh;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 
 header {
@@ -35,6 +39,8 @@ nav {
 }
 .songsec{
     margin-left: 20px;
+    font-weight: bold;
+    color: pink;
 }
 .songsec:hover{
     color: wheat;
@@ -45,6 +51,7 @@ nav {
 #nav1>i{
     transform: scale(2.5);
     margin-left: 20px;
+    color: rgb(234, 126, 255);
 }
 
 #pglist {
@@ -85,11 +92,11 @@ nav {
 }
 
 .container {
-    min-height: 70vh;
+    min-height: 80vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     background-image: url(Mic.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -104,6 +111,7 @@ nav {
     border-radius: 40px;
     display: flex;
     align-items: center;
+    margin-left: 70px;
 }
 .song:hover{
     transform: scale(1.1);
@@ -131,9 +139,14 @@ footer {
     align-items: center;
     overflow: hidden;
 }
+.secs{
+    margin-top: 10px;
+    margin-left: 35px;
+    align-self: flex-start;
+}
 
 #seekbar {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 95vw;
     outline: none;
     cursor: pointer;
@@ -162,19 +175,29 @@ footer {
 }
 
 .songinfo{
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 35px;
+    margin-left: 8px;
     position: absolute;
     left: 30px;
     top: 40px;
+    color: rgb(243, 92, 193);
 }
 
 .underlined{
     text-decoration: underline;
+    color: wheat;
 }
 
 .opaque{
     background-color: rgba(0, 0, 0, 0.90);
-    justify-content: center;
 }
 
+.opaque span{
+    color: rgb(255, 143, 255);
+    margin: auto;
+    font-size: 22px;
+}
+
+.opaque i{
+    color: rgb(255, 143, 255);
+}
