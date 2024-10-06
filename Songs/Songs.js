@@ -3,7 +3,7 @@
 //For Example { SongName: 'Your song name' },
 //You song should be in the same directory(folder) where your JS file is save, no subfolder!
 //You can categorize songs, for sad songs, there is a list below and upbeat song's list is also here.
-//For removing a song from list just remove the whole line of a song.
+//For removing a song from list just remove the whole line of a song. 
 const songslist = [
     { SongName: '9 45.mp3' },
     { SongName: 'LABON KO.mp3' },
