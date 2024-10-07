@@ -7,6 +7,10 @@
 const songslist = [
     { SongName: '9 45.mp3' },
     { SongName: 'LABON KO.mp3' },
+    { SongName: 'AAWARA HUN.mp3' },
+    { SongName: 'JEENA ISI KA NAAM HA.mp3' },
+    { SongName: 'MERA JOOTA HA JAPANI.mp3' },
+    { SongName: 'MERE MEHBOOB QAYAMAT HOGI.mp3' },
     { SongName: '12 Bande.mp3' },
     { SongName: 'Aam Jahe Munde.mp3' },
     { SongName: 'Amplifier.mp3' },
@@ -24,10 +28,12 @@ const songslist = [
     { SongName: 'GOLIYAN.mp3' },
     { SongName: 'Hairun Khairun.mp3' },
     { SongName: 'Aaye Ho Meri Zindagi Mein Tum Bahar Banke .mp3' },
+    { SongName: 'Dil Ne Yeh Kaha Hai.mp3' },
+    { SongName: 'Main Yahaan Hoon.mp3' },
+    { SongName: 'Mera samne wali khidki.mp3' },
     { SongName: 'Baatein Ye Kabhi Na.mp3' },
     { SongName: 'Chahu main ya na.mp3' },
     { SongName: 'Chal Waha Jate Hai.mp3' },
-    { SongName: 'Dil Ne Yeh Kaha Hai.mp3' },
     { SongName: 'dil sambhal ja zara.mp3' },
     { SongName: 'Hamari Adhuri Kahani.mp3' },
     { SongName: 'Humnava Mere.mp3' },
@@ -38,8 +44,6 @@ const songslist = [
     { SongName: 'Lalkaara.mp3' },
     { SongName: 'Lungi Dance.mp3' },
     { SongName: 'MAIN DHOONDNE KO ZAMAANE MEIN.mp3' },
-    { SongName: 'Main Yahaan Hoon.mp3' },
-    { SongName: 'Mera samne wali khidki.mp3' },
     { SongName: 'Mere Paas Tum Ho.mp3' },
     { SongName: 'MIRASI.mp3' },
     { SongName: 'Mitti De Tibbe.mp3' },
@@ -84,7 +88,7 @@ const sadsongs = [
     { SongName: 'Khamoshiyan.mp3' },
     { SongName: 'MAIN DHOONDNE KO ZAMAANE MEIN.mp3' },
     { SongName: 'Main Yahaan Hoon.mp3' },
-    { SongName: 'Mera samne wali khidki.mp3' },
+    { SongName: 'Mere samne wali khidki.mp3' },
     { SongName: 'Mere Paas Tum Ho.mp3' },
     { SongName: 'Suraj Hua Maddham.mp3' },
     { SongName: 'Teri meri meri teri.mp3' },
@@ -135,6 +139,31 @@ const beatsongs = [
     { SongName: 'SANJU.mp3' },
     { SongName: 'Teri Chunnariya.mp3' },
 ]
+//oldsongs list
+let oldsongs = [
+    { SongName: 'AAWARA HUN.mp3' },
+    { SongName: 'JEENA ISI KA NAAM HA.mp3' },
+    { SongName: 'Das Main Ki Pyar Wichon khatya.mp3' },
+    { SongName: 'MERE MEHBOOB QAYAMAT HOGI.mp3' },
+    { SongName: 'MERA JOOTA HA JAPANI.mp3' },
+    { SongName: 'Baadshah O Baadshah.mp3' },
+    { SongName: 'Aaye Ho Meri Zindagi Mein Tum Bahar Banke .mp3' },
+    { SongName: 'Dil Ne Yeh Kaha Hai.mp3' },
+    { SongName: 'Tujhe dekha to ye jana sanam.mp3' },
+    { SongName: 'Ankhen khuli.mp3' },
+    { SongName: 'Main Yahaan Hoon.mp3' },
+    { SongName: 'Main Yahaan Hoon.mp3' },
+    { SongName: 'Dil Ne Yeh Kaha Hai.mp3' },
+    { SongName: 'Pani Deyan Bulbuleya.mp3' },
+    { SongName: 'Mere Mehboob Mere Sanam.mp3' },
+    { SongName: 'Ye tune kya kiya.mp3' },
+    { SongName: 'Mere Rashke Qamar.mp3' },
+    { SongName: 'Suraj Hua Maddham.mp3' },
+    { SongName: 'Ye raaten ye mausam.mp3' },
+    { SongName: 'Baadshah O Baadshah.mp3' },
+    { SongName: 'Teri Chunnariya.mp3' },
+    { SongName: 'Mere samne wali khidki.mp3' },
+]
 
 // vairables defined
 let masterplay = document.getElementById('masterplay');
@@ -151,6 +180,7 @@ let allsongsbtn = document.getElementById('allsongs');
 let sadsongsbtn = document.getElementById('sadsongs');
 let currentlist
 let beatsongsbtn = document.getElementById('beatsongs');
+let oldsongsbtn = document.getElementById('oldsongs');
 let songDiv
 let ct = document.getElementById('current-time');
 let tt = document.getElementById('total-time');
@@ -165,7 +195,7 @@ function loadsongs(SongsList) {
     for (let index = 0; index < SongsList.length; index++) {
         let htmlcode = `<div class="song">
         <i class="fa-solid fa-headphones"></i>
-        <span>${SongsList[index].SongName.replace('.mp3', '')}</span>
+        <span>${SongsList[index].SongName.replace('.mp3', '').toUpperCase()}</span>
         </div>`;
         container.insertAdjacentHTML('beforeend', htmlcode);
     }
@@ -237,6 +267,7 @@ sadsongsbtn.addEventListener('click', () => {
     sadsongsbtn.classList.add('underlined')
     allsongsbtn.classList.remove('underlined')
     beatsongsbtn.classList.remove('underlined')
+    oldsongsbtn.classList.remove('underlined')
     currentlist = sadsongs
     loadsongs(sadsongs)
 })
@@ -245,6 +276,7 @@ allsongsbtn.addEventListener('click', () => {
     sadsongsbtn.classList.remove('underlined')
     allsongsbtn.classList.add('underlined')
     beatsongsbtn.classList.remove('underlined')
+    oldsongsbtn.classList.remove('underlined')
     currentlist = songslist
     loadsongs(songslist)
 })
@@ -253,14 +285,24 @@ beatsongsbtn.addEventListener('click', () => {
     sadsongsbtn.classList.remove('underlined')
     allsongsbtn.classList.remove('underlined')
     beatsongsbtn.classList.add('underlined')
+    oldsongsbtn.classList.remove('underlined')
     currentlist = beatsongs
     loadsongs(beatsongs)
+})
+//old songs list
+oldsongsbtn.addEventListener('click', () => {
+    sadsongsbtn.classList.remove('underlined')
+    allsongsbtn.classList.remove('underlined')
+    beatsongsbtn.classList.remove('underlined')
+    oldsongsbtn.classList.add('underlined')
+    currentlist = oldsongs
+    loadsongs(oldsongs)
 })
 
 
 // playbutton events that functions for pause or play
 masterplay.addEventListener('click', () => {
-    if (!allsongsbtn.classList.contains('underlined') && !sadsongsbtn.classList.contains('underlined') && !beatsongsbtn.classList.contains('underlined')) {
+    if (!allsongsbtn.classList.contains('underlined') && !sadsongsbtn.classList.contains('underlined') && !beatsongsbtn.classList.contains('underlined') && !oldsongsbtn.classList.contains('underlined')) {
         return
     }
     else if (song.paused || song.currentTime <= 0) {
