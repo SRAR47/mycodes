@@ -160,7 +160,6 @@ let oldsongs = [
     { SongName: 'Ankhen khuli.mp3' },
     { SongName: 'Main Yahaan Hoon.mp3' },
     { SongName: 'DEKHTE DEKHTE.mp3' },
-    { SongName: 'Dil Ne Yeh Kaha Hai.mp3' },
     { SongName: 'Pani Deyan Bulbuleya.mp3' },
     { SongName: 'Mere Mehboob Mere Sanam.mp3' },
     { SongName: 'Ye tune kya kiya.mp3' },
