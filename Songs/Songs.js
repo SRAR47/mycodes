@@ -152,7 +152,6 @@ let oldsongs = [
     { SongName: 'Tujhe dekha to ye jana sanam.mp3' },
     { SongName: 'Ankhen khuli.mp3' },
     { SongName: 'Main Yahaan Hoon.mp3' },
-    { SongName: 'Main Yahaan Hoon.mp3' },
     { SongName: 'Dil Ne Yeh Kaha Hai.mp3' },
     { SongName: 'Pani Deyan Bulbuleya.mp3' },
     { SongName: 'Mere Mehboob Mere Sanam.mp3' },
@@ -160,7 +159,6 @@ let oldsongs = [
     { SongName: 'Mere Rashke Qamar.mp3' },
     { SongName: 'Suraj Hua Maddham.mp3' },
     { SongName: 'Ye raaten ye mausam.mp3' },
-    { SongName: 'Baadshah O Baadshah.mp3' },
     { SongName: 'Teri Chunnariya.mp3' },
     { SongName: 'Mere samne wali khidki.mp3' },
 ]
