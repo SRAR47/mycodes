@@ -282,4 +282,7 @@ footer {
     .song>span{
         margin-left: 15px;
     }
+    .opaque span{
+        margin: auto;
+    }
 }
