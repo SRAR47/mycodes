@@ -11,7 +11,8 @@ body {
     background-color: rgb(40, 40, 40);
     height: 100vh;
 }
-body::-webkit-scrollbar{
+
+body::-webkit-scrollbar {
     display: none;
 }
 
@@ -29,26 +30,31 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
+    border: 1px solid red;
 }
 
 #nav1 {
+    border: 1px solid green;
     display: flex;
     width: 50vw;
     align-items: center;
     justify-content: flex-start;
 }
-.songsec{
+
+.songsec {
+    border: 1px solid blue;
     margin-left: 20px;
     font-weight: bold;
     color: pink;
 }
-.songsec:hover{
+
+.songsec:hover {
     color: wheat;
     cursor: pointer;
     transform: scale(1.2);
 }
 
-#nav1>i{
+#nav1>i {
     transform: scale(2.5);
     margin-left: 20px;
     color: rgb(234, 126, 255);
@@ -61,6 +67,7 @@ nav {
     justify-content: flex-start;
     width: 50vw;
     list-style-type: none;
+    border: 1px solid white;
 }
 
 
@@ -98,7 +105,6 @@ nav {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     background-image: url(Mic.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -115,7 +121,8 @@ nav {
     align-items: center;
     margin-left: 70px;
 }
-.song:hover{
+
+.song:hover {
     transform: scale(1.1);
     transition-duration: 0.2s;
     cursor: pointer;
@@ -141,7 +148,8 @@ footer {
     align-items: center;
     overflow: hidden;
 }
-.secs{
+
+.secs {
     margin-top: 10px;
     margin-left: 35px;
     align-self: flex-start;
@@ -153,7 +161,8 @@ footer {
     outline: none;
     cursor: pointer;
 }
-.range{
+
+.range {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -171,12 +180,13 @@ footer {
 .btns {
     list-style-type: none;
 }
-.btns:hover{
+
+.btns:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
 
-.songinfo{
+.songinfo {
     margin-top: 35px;
     margin-left: 8px;
     position: absolute;
@@ -185,21 +195,95 @@ footer {
     color: rgb(243, 92, 193);
 }
 
-.underlined{
+.underlined {
     text-decoration: underline;
     color: wheat;
 }
 
-.opaque{
+.opaque {
     background-color: rgba(0, 0, 0, 0.90);
 }
 
-.opaque span{
+.opaque span {
     color: rgb(255, 143, 255);
     margin: auto;
     font-size: 22px;
 }
 
-.opaque i{
+.opaque i {
     color: rgb(255, 143, 255);
+}
+
+@media (max-width:1110px) {
+    #nav2 {
+        display: none;
+    }
+
+    #nav1 {
+        width: 100vw;
+        margin: 0;
+    }
+
+    #pglist {
+        width: 80vw;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .container {
+        align-items: center;
+    }
+
+    .song {
+        width: 90vw;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+
+    .song>span {
+        font-size: 15px;
+    }
+
+
+    .text {
+        display: none;
+    }
+}
+
+@media (max-width:700px) {
+    .songsec {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:550px) {
+    .songsec{
+        font-size: 12px;
+    }
+    .song>span{
+        font-size: 10px;
+    }
+    .time{
+        font-size: 10px;
+    }
+    .secs{
+        font-size: 10px;
+    }
+    #nav1>i{
+        display: none;
+    }
+    .songbtns{
+        margin-top: 10px;
+    }
+    footer{
+        height: 15vh;
+    }
+    .song>i{
+        transform: scale(1.2);
+        margin-left: 10px;
+    }
+    .song>span{
+        margin-left: 15px;
+    }
 }
