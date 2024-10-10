@@ -198,6 +198,10 @@ footer {
 
 .opaque {
     background-color: rgba(0, 0, 0, 0.90);
+    transform: scale(1.1);
+}
+.opaque:hover{
+    transform: scale(1.15);
 }
 
 .opaque span {
