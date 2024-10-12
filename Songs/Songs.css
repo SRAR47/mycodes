@@ -255,6 +255,9 @@ footer {
     .songsec {
         font-size: 15px;
     }
+    .container{
+        background-position: center;
+    }
 }
 
 @media (max-width:550px) {
