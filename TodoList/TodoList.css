@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Ubuntu;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #153677, #4e085f);
+}
+
+.container {
+    width: 50vw;
+    height: auto;
+    background-color: white;
+    display: flex;
+    border-radius: 50px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    width: 50vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: rgb(78, 1, 78);
+}
+
+
+.logo {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.input {
+    height: 10vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    height: 9vh;
+    width: 39vw;
+    border-radius: 50px;
+    padding: 20px;
+    color: black;
+    background-color: rgb(202, 202, 202);
+    outline: none;
+    box-shadow: none;
+    border: none;
+    margin-right: 0.5vw;
+}
+
+.btn {
+    width: 9vw;
+    height: 9vh;
+    border-radius: 50px;
+    background-color: purple;
+    border: none;
+    font-size: 17px;
+    color: wheat;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.btn:active {
+    transform: scale(1);
+}
+
+.todolist {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 30vh;
+    max-height: 50vh;
+    width: 50vw;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+    max-height: auto;
+    min-width: 40vw;
+    max-width: 50vw;
+}
+
+.work {
+    margin-left: 1vw;
+}
+
+.x {
+    margin-left: auto;
+    margin-right: 1vw;
+    color: gray;
+}
+.x:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+/* Scrollbar track */
+.todolist::-webkit-scrollbar {
+    width: 8px;
+    /* Width of the scrollbar */
+}
+
+/* Scrollbar thumb */
+.todolist::-webkit-scrollbar-thumb {
+    background-color: rgb(78, 1, 78);
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+/* Scrollbar track background */
+.todolist::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Background color of the scrollbar track */
+    border-radius: 10px;
+}
+
+/* Scrollbar on hover */
+.todolist::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(120, 10, 120);
+    /* Darken color on hover */
+}
