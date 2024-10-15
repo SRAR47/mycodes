@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahmeer - Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <img class="introimg" src="images/logo.png" alt="">
+        <div class="intro">
+            <div class="name">Shahmeer Raza</div> I am a passionate <span id="element"></span>
+        </div>
+        <div class="experience">
+            Experience with
+            <div class="images">
+                <img src="images/html.png" alt="">
+                <img src="images/css.png" alt="">
+                <img src="images/js.png" alt="">
+                <img src="images/nodejs.png" alt="">
+            </div>
+        </div>
+        <div class="projects">
+            <div class="heading">Projects</div>
+            <div class="proj">
+                <a href="https://srarsongs.vercel.app/" target="_blank">
+                    <div><img src="images/songsproj.png" alt=""><div class="projtext">Enjoy Your Favourite Songs here</div></div>
+                </a>
+                <a href="https://srartodolist.vercel.app/" target="_blank">
+                    <div><img src="images/todolistproj.png" alt=""><div class="projtext">List Your Daily tasks here</div></div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerheading"><a href="contact.html">Contact</a></div>
+        <div class="footertext">I am a Web Developer, Web Designer with over 3 months of experience. I am professional in HTML, CSS and JavaScript. If You want to cantact me for any project you can. Just Email me! </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Front-End Engineer', 'Web Designer', 'Web Developer',],
+            typeSpeed: 50,
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
